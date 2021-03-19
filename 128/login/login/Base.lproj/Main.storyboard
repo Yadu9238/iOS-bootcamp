@@ -31,13 +31,16 @@
                                         <rect key="frame" x="0.0" y="60" width="325" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-Be-Zhe">
                                 <rect key="frame" x="168.5" y="328" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9xU-Oc-Gzm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0z-xt-Zmi">
                                 <rect key="frame" x="141.5" y="95" width="92.5" height="20"/>
@@ -52,18 +55,55 @@
                             <constraint firstItem="Ghp-Be-Zhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rsa-WA-nCq"/>
                             <constraint firstItem="U0z-xt-Zmi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bjX-Lh-ZHZ"/>
                             <constraint firstItem="U0z-xt-Zmi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="eOI-Vp-o4x">
+                                <variation key="heightClass=compact-widthClass=compact" constant="50"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLi-sN-ait" secondAttribute="trailing" constant="25" id="irw-p3-4AO"/>
-                            <constraint firstItem="Ghp-Be-Zhe" firstAttribute="top" secondItem="cLi-sN-ait" secondAttribute="bottom" constant="56" id="q4w-5t-A9Z"/>
-                            <constraint firstItem="cLi-sN-ait" firstAttribute="top" secondItem="U0z-xt-Zmi" secondAttribute="bottom" constant="67" id="sgj-Vo-a0M"/>
+                            <constraint firstItem="Ghp-Be-Zhe" firstAttribute="top" secondItem="cLi-sN-ait" secondAttribute="bottom" constant="56" id="q4w-5t-A9Z">
+                                <variation key="heightClass=compact-widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="cLi-sN-ait" firstAttribute="top" secondItem="U0z-xt-Zmi" secondAttribute="bottom" constant="67" id="sgj-Vo-a0M">
+                                <variation key="heightClass=compact-widthClass=compact" constant="45"/>
+                            </constraint>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="fSQ-I0-I0q" id="rbm-47-Anh"/>
+                        <outlet property="userName" destination="uG1-az-xow" id="Xdm-Hb-Bzp"/>
+                        <segue destination="1JS-ki-ubI" kind="presentation" identifier="next" id="rig-Or-tC8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62" y="99"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="DBu-lB-ivc">
+            <objects>
+                <viewController id="1JS-ki-ubI" customClass="HomeViewController" customModule="login" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F4b-Qr-TzC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8g-bC-1Fw">
+                                <rect key="frame" x="66.5" y="315.5" width="242" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B8g-bC-1Fw" firstAttribute="centerY" secondItem="F4b-Qr-TzC" secondAttribute="centerY" id="4m2-Db-88I"/>
+                            <constraint firstItem="B8g-bC-1Fw" firstAttribute="centerX" secondItem="F4b-Qr-TzC" secondAttribute="centerX" id="Peb-0D-RJO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zf0-4z-Lm6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQv-d7-TRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="99"/>
         </scene>
     </scenes>
 </document>
