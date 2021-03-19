@@ -14,14 +14,21 @@ class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var toDoStack: UIStackView!
     
+    
+    var dataModel = ToDoModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        createRow()
+        for item in dataModel.items{
+            createRow(at:item)
+    }
     }
 
-    func createRow(){
+    @IBAction func add(_ sender: Any) {
+        //createRow()
+    }
+    func createRow(at:ToDoItem){
         if let objs = Bundle.main.loadNibNamed("itemView", owner: self, options: nil)
         {
             if let mainView = objs[0] as? UIView{
