@@ -23,4 +23,7 @@ struct ToDoModel{
     init(){
         items = [ToDoItem(title: "get Milk", dueDate: Date(), priority: 9, details: "Get milk today"),ToDoItem(title: "College", dueDate: Date(), priority: 9, details: "attend classes")]
     }
+    
+  
+    
 }
